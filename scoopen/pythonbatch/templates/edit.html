@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+</head>
+<body>
+<form method="POST" class="post-form" action="/update/{{singleStud.econtact}}">
+        {% csrf_token %}
+    <div class="container">
+<br>
+    <div class="form-group row">
+    <label class="col-sm-1 col-form-label"></label>
+    <div class="col-sm-4">
+    <h3>Update Details</h3>
+    </div>
+  </div>
+    <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Student Id:</label>
+    <div class="col-sm-4">
+        <input type="text" name="student_id" id="id_student_id" required maxlength="20" value="{{ singleStud.student_id }}"/>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Student FirstName:</label>
+    <div class="col-sm-4">
+        <input type="text" name="first_name" id="id_first_name" required maxlength="100" value="{{ singleStud.first_name }}" />
+    </div>
+  </div>
+
+        <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Student LastName:</label>
+    <div class="col-sm-4">
+        <input type="text" name="last_name" id="id_last_name" required maxlength="100" value="{{ singleStud.last_name }}" />
+    </div>
+  </div>
+
+    <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Student Email:</label>
+    <div class="col-sm-4">
+        <input type="email" name="email" id="id_email" required maxlength="254" value="{{ singleStud.email }}" />
+    </div>
+  </div>
+    <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Student Contact:</label>
+    <div class="col-sm-4">
+        <input type="text" name="econtact" id="id_econtact" required maxlength="15" value="{{ singleStud.econtact }}" />
+    </div>
+  </div>
+    <div class="form-group row">
+    <label class="col-sm-1 col-form-label"></label>
+    <div class="col-sm-4">
+    <button type="submit" class="btn btn-success">Update</button>
+    </div>
+  </div>
+    </div>
+</form>
+</body>
+</html>
